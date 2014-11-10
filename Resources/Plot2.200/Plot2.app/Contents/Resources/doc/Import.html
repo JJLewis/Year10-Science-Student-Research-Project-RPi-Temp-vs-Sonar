@@ -1,0 +1,139 @@
+<!DOCTYPE 
+  HTML PUBLIC 
+  "-//W3C//DTD HTML 4.01 Transitional//EN" 
+  "http://www.w3.org/TR/html4/loose.dtd">
+
+<html><head>
+<title>Plot2 Documentation : Doc - Import browse</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>  <meta name='robots' content='index,follow' />
+
+<link rel='stylesheet' href='plot2.css' type='text/css' />
+</head>
+
+<body bgcolor="#ffffff">
+
+<div id="main">
+	<div class="content-mat">
+		<div id="content">
+			<div id='sidebar'><div><img src='Plot2Icon.png' alt='' title='' /></div>
+<div class='vspace'></div><h2>Home</h2>
+<p><a class='wikilink' href='Introduction.html'>Introduction</a>
+</p>
+<div class='vspace'></div><h2>References</h2>
+<p><a class='wikilink' href='Toolbar.html'>Toolbar</a><br /><a class='wikilink' href='Expressions.html'>Expressions</a><br /><a class='wikilink' href='TimeFormat.html'>Time Format</a><br /><a class='wikilink' href='Preferences.html'>Preferences</a><br /><a class='selflink' href='Import.html'>Import</a><br /><a class='wikilink' href='PerlImport.html'>Perl Import Filter</a><br /><a class='wikilink' href='PerlFilter.html'>Perl Data Filter</a><br /><a class='wikilink' href='CommandLine.html'>Command Line</a>
+</p>
+<div class='vspace'></div><h2>Inspectors</h2>
+<p><a class='wikilink' href='DataBufferInspector.html'>Data Buffer</a><br /><a class='wikilink' href='DataInspector.html'>Data</a><br /><a class='wikilink' href='MacroEditor.html'>Macro</a><br /><a class='wikilink' href='MysqlImportEditor.html'>MySQL</a>
+</p>
+<div class='vspace'></div><h2>Macro</h2>
+<p><a class='wikilink' href='MacroLanguage.html'>Macro Language</a><br /><a class='wikilink' href='MacroRangeCommands.html'>Range</a><br /><a class='wikilink' href='MacroBufferCommands.html'>Buffer</a><br /><a class='wikilink' href='MacroControlCommands.html'>Control</a><br /><a class='wikilink' href='MacroInteractiveCommands.html'>Interactive</a><br /><a class='wikilink' href='MacroCalculationCommands.html'>Calculation</a><br /><a class='wikilink' href='MacroStyleCommands.html'>Style</a><br /><a class='wikilink' href='MacroDataStyleCommands.html'>Data Style</a><br /><a class='wikilink' href='MacroAxisStyleCommands.html'>Axis Style</a><br /><a class='wikilink' href='MacroLegendCommands.html'>Legend</a><br /><a class='wikilink' href='MacroTextGraphicCommands.html'>Text &amp; Graphic</a><br /><a class='wikilink' href='MacroDocumentCommands.html'>Document</a><br /><a class='wikilink' href='MacroMiscCommands.html'>Miscellaneous</a>
+</p>
+<div class='vspace'></div><h2>Miscellaneous</h2>
+<p><a class='wikilink' href='Contact.html'>Contact</a><br /><a class='wikilink' href='Warranty.html'>Warranty</a>
+</p>
+<div class='vspace'></div>
+</div>
+				<!--PageText-->
+<div id='wikitext'>
+<h1>ASCII Import</h1>
+<p>Generally the ASCII import filter accepts files with UNIX, Mac and Windows line end characters. Each line should contain at least one number. Numbers in the line will be separated by any character(s) which could not be part of a number. 
+</p>
+<p class='vspace'><em>Plot</em> can also detect time values if they appear at the beginning of a text line. The following time formats will be detected automatically and treated as x values:
+</p>
+<div class='vspace'></div>
+<table border='1' ><tr ><td  align='right'>yyyy-MM-dd HH:mm:ss</td><td  align='right'>2014-03-22 11:16:00</td></tr>
+<tr ><td  align='right'>yyyy-MM-dd HH:mm:ss.S</td><td  align='right'>2014-03-22 11:16:00.834</td></tr>
+<tr ><td  align='right'>yyyy-MM-dd HH:mm</td><td  align='right'>2014-03-22 11:16</td></tr>
+<tr ><td  align='right'>MM/dd/yyyy HH:mm:ss</td><td  align='right'>03/22/2014 11:16:00</td></tr>
+<tr ><td  align='right'>MM/dd/yyyy HH:mm:ss.S</td><td  align='right'>03/22/2014 11:16:00.834</td></tr>
+<tr ><td  align='right'>MM/dd/yyyy HH:mm</td><td  align='right'>03/22/2014 11:16</td></tr>
+<tr ><td  align='right'>dd.MM.yyyy HH:mm:ss</td><td  align='right'>22.03.2014 11:16:00</td></tr>
+<tr ><td  align='right'>dd.MM.yyyy HH:mm:ss.S</td><td  align='right'>22.03.2014 11:16:00.834</td></tr>
+<tr ><td  align='right'>dd.MM.yyyy HH:mm</td><td  align='right'>22.03.2014 11:16</td></tr>
+<tr ><td  align='right'>yyyy-MM-dd</td><td  align='right'>2014-03-22</td></tr>
+<tr ><td  align='right'>MM/dd/yyyy</td><td  align='right'>03/22/2014</td></tr>
+<tr ><td  align='right'>dd.MM.yyyy</td><td  align='right'>22.03.2014</td></tr>
+<tr ><td  align='right'>HH:mm:ss</td><td  align='right'>11:16:00</td></tr>
+<tr ><td  align='right'>HH:mm:ss.S</td><td  align='right'>11:16:00.834</td></tr>
+<tr ><td  align='right'>HH:mm</td><td  align='right'>11:16</td></tr>
+</table>
+<p class='vspace'>If the <em>Plot</em> builtin import filter is not able to import your data file you can build your own <em>Perl</em> based <a class='wikilink' href='PerlImport.html'>import filter</a>.
+</p>
+<p class='vspace'>The import dialog allows to select different options for ASCII import.
+</p>
+<p class='vspace'><strong>Import Mode</strong>
+</p>
+<div class='vspace'></div><div class='indent'><strong>Multicolumn</strong>: The built in import filter expects an ASCII file with one or more columns. If no field separator is specified columns will be separated by any character sequence which can not be part of a number.
+<div class='vspace'></div></div><div class='indent'><strong>Error Values</strong>: This mode expects up to 4 columns of data. The 1. and 2. will be treated as X and Y values. The 3. and 4. as X error values and Y error values. If only three columns are available the 3. will used as Y error values.
+</div><p class='vspace'><strong>Treat period as separator</strong>: If checked treat period as field separator. Has only effect if the <em>Field Separator</em> option is empty.
+</p>
+<p class='vspace'><strong>Treat comma as separator</strong>: If checked treat comma as field separator. Has only effect if the <em>Field Separator</em> option is empty.
+</p>
+<p class='vspace'><strong>Field Separator</strong>: Defines the field separator for ASCII import. Explicit definition of the separator allows to import files with empty fields.  
+</p>
+<p class='vspace'><strong>Ignore Lines Containing</strong>: Lines in your data file which contains this string will be ignored.
+</p>
+<p class='vspace'><strong>Comment Character Sequence</strong>: Anything in a line behind this string will be ignored.
+</p>
+<p class='vspace'><strong>Ignore lines which not begin with a number</strong>: If checked only lines beginning with a number will be processed.
+</p>
+<p class='vspace'><strong>Disable Time Import</strong>: If checked <em>Plot</em> will not try to detect time values. This can speed up import off large files.
+</p>
+<p class='vspace'><strong>Custom Time Format</strong>: Enable this if the automatic time value detection don't work and enter your custom  <a class='wikilink' href='TimeFormat.html'>time format</a>.
+</p>
+<p class='vspace'><strong>X Column</strong>: Defines which column should be the X column starting with 1 for the first column.  
+</p>
+<p class='vspace'><strong>Treat all columns as Y values</strong>: If checked, all columns will be interpreted as Y values and the X values will be generated as sequence number. This allows also to import files which have only one column.
+</p>
+<p class='vspace'><br clear='all' />
+</p>
+<div class='vspace'></div><h1>Binary Import Filter</h1>
+<p><em>Plot</em> allows importing of binary data. This can be done by  selecting <em>Binary Import</em> from the <em>File</em> menu.
+In the open panel you have to select your binary file and to provide some extra informations.
+</p>
+<p class='vspace'><strong>Data type</strong>: Specifies the type of date in your file. Valid type are double (64 bit), float (32 bit), integer (32 bit) or integer (16 bit).
+</p>
+<p class='vspace'><strong>Import mode</strong>: Defines how the data are ordered in you file. <em>Column mode</em> expects data ordered in columns and <em>Block mode</em> expects a block for each column.
+</p>
+<p class='vspace'><strong>Swap byteorder</strong>: Allows to swap data which are generated on a platform with different byte order.  
+</p>
+<p class='vspace'><strong>Columns</strong>: The number of columns in your file (has to be at least 1). If your file has only one column the values will be treated as Y values, the X value will be generated as sequence number. If you have more than one column the first will be treated as X value and every other column as Y value. 
+</p>
+<p class='vspace'><br clear='all' />
+</p>
+</div>
+
+			</div>
+	</div>
+</div>
+</body></html>

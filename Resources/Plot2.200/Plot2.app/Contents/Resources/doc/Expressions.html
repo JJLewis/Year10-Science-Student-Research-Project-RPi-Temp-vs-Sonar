@@ -1,0 +1,125 @@
+<!DOCTYPE 
+  HTML PUBLIC 
+  "-//W3C//DTD HTML 4.01 Transitional//EN" 
+  "http://www.w3.org/TR/html4/loose.dtd">
+
+<html><head>
+<title>Plot2 Documentation : Doc - Expressions browse</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>  <meta name='robots' content='index,follow' />
+
+<link rel='stylesheet' href='plot2.css' type='text/css' />
+</head>
+
+<body bgcolor="#ffffff">
+
+<div id="main">
+	<div class="content-mat">
+		<div id="content">
+			<div id='sidebar'><div><img src='Plot2Icon.png' alt='' title='' /></div>
+<div class='vspace'></div><h2>Home</h2>
+<p><a class='wikilink' href='Introduction.html'>Introduction</a>
+</p>
+<div class='vspace'></div><h2>References</h2>
+<p><a class='wikilink' href='Toolbar.html'>Toolbar</a><br /><a class='selflink' href='Expressions.html'>Expressions</a><br /><a class='wikilink' href='TimeFormat.html'>Time Format</a><br /><a class='wikilink' href='Preferences.html'>Preferences</a><br /><a class='wikilink' href='Import.html'>Import</a><br /><a class='wikilink' href='PerlImport.html'>Perl Import Filter</a><br /><a class='wikilink' href='PerlFilter.html'>Perl Data Filter</a><br /><a class='wikilink' href='CommandLine.html'>Command Line</a>
+</p>
+<div class='vspace'></div><h2>Inspectors</h2>
+<p><a class='wikilink' href='DataBufferInspector.html'>Data Buffer</a><br /><a class='wikilink' href='DataInspector.html'>Data</a><br /><a class='wikilink' href='MacroEditor.html'>Macro</a><br /><a class='wikilink' href='MysqlImportEditor.html'>MySQL</a>
+</p>
+<div class='vspace'></div><h2>Macro</h2>
+<p><a class='wikilink' href='MacroLanguage.html'>Macro Language</a><br /><a class='wikilink' href='MacroRangeCommands.html'>Range</a><br /><a class='wikilink' href='MacroBufferCommands.html'>Buffer</a><br /><a class='wikilink' href='MacroControlCommands.html'>Control</a><br /><a class='wikilink' href='MacroInteractiveCommands.html'>Interactive</a><br /><a class='wikilink' href='MacroCalculationCommands.html'>Calculation</a><br /><a class='wikilink' href='MacroStyleCommands.html'>Style</a><br /><a class='wikilink' href='MacroDataStyleCommands.html'>Data Style</a><br /><a class='wikilink' href='MacroAxisStyleCommands.html'>Axis Style</a><br /><a class='wikilink' href='MacroLegendCommands.html'>Legend</a><br /><a class='wikilink' href='MacroTextGraphicCommands.html'>Text &amp; Graphic</a><br /><a class='wikilink' href='MacroDocumentCommands.html'>Document</a><br /><a class='wikilink' href='MacroMiscCommands.html'>Miscellaneous</a>
+</p>
+<div class='vspace'></div><h2>Miscellaneous</h2>
+<p><a class='wikilink' href='Contact.html'>Contact</a><br /><a class='wikilink' href='Warranty.html'>Warranty</a>
+</p>
+<div class='vspace'></div>
+</div>
+				<!--PageText-->
+<div id='wikitext'>
+<h1>Expressions</h1>
+<p>Plot functions which allow mathematical expressions supports the following functions:
+</p>
+<table border='1' ><tr ><td  align='left'><code>+, -, *, /</code></td><td  align='left'>arithmetic operations</td></tr>
+<tr ><td  align='left'><code>%, mod</code></td><td  align='left'>modulo</td></tr>
+<tr ><td  align='left'><code>( ) </code></td><td  align='left'>grouping</td></tr>
+<tr ><td  align='left'><code>^, **</code></td><td  align='left'>power</td></tr>
+<tr ><td  align='left'><code>rad(x), deg(x)</code></td><td  align='left'>conversion between radians and degrees</td></tr>
+<tr ><td  align='left'><code>sin(x),cos(x),tan(x)</code></td><td  align='left'>trigonometric functions</td></tr>
+<tr ><td ><code>asin(x),acos(x),atan(x)</code></td><td  align='left'>inverse trigonometric functions</td></tr>
+<tr ><td  align='left'><code>sinh(x),cosh(x),tanh(x)</code></td><td  align='left'>hyperbolic functions</td></tr>
+<tr ><td  align='left'><code>rnd(h)</code></td><td  align='left'>random number (h = height)</td></tr>
+<tr ><td  align='left'><code>ln(x),log(x)</code></td><td  align='left'>natural and logarithm to base 10</td></tr>
+<tr ><td  align='left'><code>sqrt(x)</code></td><td  align='left'>square root</td></tr>
+<tr ><td  align='left'><code>cbrt(x)</code></td><td  align='left'>cubic root</td></tr>
+<tr ><td  align='left'><code>frac(x)</code></td><td  align='left'>returns the fraction of x</td></tr>
+<tr ><td  align='left'><code>int(x)</code></td><td  align='left'>returns the integer of x</td></tr>
+<tr ><td  align='left'><code>round(x;n)</code></td><td  align='left'>round up and down to the nth place on the right of the decimal point</td></tr>
+<tr ><td  align='left'><code>gau(x;x0;a;w)</code></td><td  align='left'>Gauss (x0 = position, a = amplitude, w = width)</td></tr>
+<tr ><td  align='left'><code>lor(x;x0;a;w)</code></td><td  align='left'>Lorentz (x0 = position, a = amplitude, w = width)</td></tr>
+<tr ><td  align='left'><code>galo(x;x0;a;w;r)</code></td><td  align='left'>Gauss-Lorentz (x0 = position, a = amplitude, w = width, r =Gauss-Lorentz ratio (1.0=pure Gauss,0.0 = pure Lorentz))</td></tr>
+<tr ><td  align='left'><code>tail(x;x0;a;w;r;t)</code></td><td  align='left'>Gauss-Lorentz with exponential Tail (x0 = position, a = amplitude, w = width,  r = Gauss-Lorentz ratio(1.0=pure Gauss,0.0 = pure Lorentz)), t = tail exponent factor</td></tr>
+<tr ><td  align='left'><code>j0(x), j1(x), jn(x,n)</code></td><td  align='left'>bessel functions</td></tr>
+<tr ><td  align='left'><code>y0(x), y1(x), yn(x,n)</code></td><td  align='left'>bessel functions</td></tr>
+<tr ><td  align='left'><code>pi</code></td><td  align='left'>3.14159265359</td></tr>
+<tr ><td  align='left'><code>e</code></td><td  align='left'>2.71828182846</td></tr>
+<tr ><td  align='left'><code>xval(b;i)</code></td><td  align='left'>x value of point <em>i</em> in buffer <em>b</em></td></tr>
+<tr ><td  align='left'><code>yval(b;i)</code></td><td  align='left'>y value of point <em>i</em> in buffer <em>b</em></td></tr>
+<tr ><td  align='left'><code>xerr(b;i)</code></td><td  align='left'>x error value of point <em>i</em> in buffer <em>b</em></td></tr>
+<tr ><td  align='left'><code>yerr(b;i)</code></td><td  align='left'>y error value of point <em>i</em> in buffer <em>b</em></td></tr>
+<tr ><td  align='left'><code>xmin(b)</code></td><td  align='left'>minimum x value in buffer <em>b</em></td></tr>
+<tr ><td  align='left'><code>xmax(b)</code></td><td  align='left'>maximum x value in buffer <em>b</em></td></tr>
+<tr ><td  align='left'><code>ymin(b)</code></td><td  align='left'>minimum y value in buffer <em>b</em></td></tr>
+<tr ><td  align='left'><code>ymax(b)</code></td><td  align='left'>maximum y value in buffer <em>b</em></td></tr>
+<tr ><td  align='left'><code>txmin (b) </code></td><td  align='left'>minimum x value over all buffers</td></tr>
+<tr ><td  align='left'><code>txmax (b) </code></td><td  align='left'>maximum x value over all buffers</td></tr>
+<tr ><td  align='left'><code>tymin (b) </code></td><td  align='left'>minimum y value over all buffers</td></tr>
+<tr ><td  align='left'><code>tymax (b) </code></td><td  align='left'>maximum y value over all buffers</td></tr>
+<tr ><td  align='left'><code>vxmin(b)</code></td><td  align='left'>minimum x value over all visible buffer</td></tr>
+<tr ><td  align='left'><code>vxmax(b)</code></td><td  align='left'>maximum x value over all visible buffer</td></tr>
+<tr ><td  align='left'><code>vymin(b)</code></td><td  align='left'>minimum y value over all visible buffer</td></tr>
+<tr ><td  align='left'><code>vymax(b)</code></td><td  align='left'>maximum y value over all visible buffer</td></tr>
+<tr ><td  align='left'><code>points(b)</code></td><td  align='left'>number of points in buffer <em>b</em></td></tr>
+<tr ><td  align='left'><code>xpoint(v;a)</code></td><td  align='left'>x screen coordinate of v (a can be 1 for the first or 2 for the second axis).</td></tr>
+<tr ><td  align='left'><code>xvalue(v;a)</code></td><td  align='left'>x value of the screen coordinate v (a can be 1 for the first or 2 for the second axis).</td></tr>
+<tr ><td  align='left'><code>ypoint(v;a)</code></td><td  align='left'>y screen coordinate of v (a can be 1 for the first or 2 for the second axis).</td></tr>
+<tr ><td  align='left'><code>yvalue(v;a)</code></td><td  align='left'>y value of the screen coordinate v (a can be 1 for the first or 2 for the second axis).</td></tr>
+<tr ><td  align='left'><code>findx(v;b)</code></td><td  align='left'>x value which depends to y in buffer b. If there are more than one it returns the first it found.</td></tr>
+<tr ><td  align='left'><code>findy(v;b)</code></td><td  align='left'>y value which depends to x in buffer b. If there are more than one it returns the first it found.</td></tr>
+</table>
+<p class='vspace'><br clear='all' />
+</p>
+</div>
+
+			</div>
+	</div>
+</div>
+</body></html>

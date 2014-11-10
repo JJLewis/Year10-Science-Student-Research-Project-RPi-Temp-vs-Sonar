@@ -1,0 +1,170 @@
+<!DOCTYPE 
+  HTML PUBLIC 
+  "-//W3C//DTD HTML 4.01 Transitional//EN" 
+  "http://www.w3.org/TR/html4/loose.dtd">
+
+<html><head>
+<title>Plot2 Documentation : Doc - Macro Calculation Commands browse</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>  <meta name='robots' content='index,follow' />
+
+<link rel='stylesheet' href='plot2.css' type='text/css' />
+</head>
+
+<body bgcolor="#ffffff">
+
+<div id="main">
+	<div class="content-mat">
+		<div id="content">
+			<div id='sidebar'><div><img src='Plot2Icon.png' alt='' title='' /></div>
+<div class='vspace'></div><h2>Home</h2>
+<p><a class='wikilink' href='Introduction.html'>Introduction</a>
+</p>
+<div class='vspace'></div><h2>References</h2>
+<p><a class='wikilink' href='Toolbar.html'>Toolbar</a><br /><a class='wikilink' href='Expressions.html'>Expressions</a><br /><a class='wikilink' href='TimeFormat.html'>Time Format</a><br /><a class='wikilink' href='Preferences.html'>Preferences</a><br /><a class='wikilink' href='Import.html'>Import</a><br /><a class='wikilink' href='PerlImport.html'>Perl Import Filter</a><br /><a class='wikilink' href='PerlFilter.html'>Perl Data Filter</a><br /><a class='wikilink' href='CommandLine.html'>Command Line</a>
+</p>
+<div class='vspace'></div><h2>Inspectors</h2>
+<p><a class='wikilink' href='DataBufferInspector.html'>Data Buffer</a><br /><a class='wikilink' href='DataInspector.html'>Data</a><br /><a class='wikilink' href='MacroEditor.html'>Macro</a><br /><a class='wikilink' href='MysqlImportEditor.html'>MySQL</a>
+</p>
+<div class='vspace'></div><h2>Macro</h2>
+<p><a class='wikilink' href='MacroLanguage.html'>Macro Language</a><br /><a class='wikilink' href='MacroRangeCommands.html'>Range</a><br /><a class='wikilink' href='MacroBufferCommands.html'>Buffer</a><br /><a class='wikilink' href='MacroControlCommands.html'>Control</a><br /><a class='wikilink' href='MacroInteractiveCommands.html'>Interactive</a><br /><a class='selflink' href='MacroCalculationCommands.html'>Calculation</a><br /><a class='wikilink' href='MacroStyleCommands.html'>Style</a><br /><a class='wikilink' href='MacroDataStyleCommands.html'>Data Style</a><br /><a class='wikilink' href='MacroAxisStyleCommands.html'>Axis Style</a><br /><a class='wikilink' href='MacroLegendCommands.html'>Legend</a><br /><a class='wikilink' href='MacroTextGraphicCommands.html'>Text &amp; Graphic</a><br /><a class='wikilink' href='MacroDocumentCommands.html'>Document</a><br /><a class='wikilink' href='MacroMiscCommands.html'>Miscellaneous</a>
+</p>
+<div class='vspace'></div><h2>Miscellaneous</h2>
+<p><a class='wikilink' href='Contact.html'>Contact</a><br /><a class='wikilink' href='Warranty.html'>Warranty</a>
+</p>
+<div class='vspace'></div>
+</div>
+				<!--PageText-->
+<div id='wikitext'>
+<h1>Macro Language: Calculation Commands</h1>
+<p><code>fg &lt;axis&gt; &lt;min&gt; &lt;max&gt; &lt;steps&gt; &lt;expr&gt;</code>
+</p><div class='indent'>Generate a function with  the given parameters.
+</div><div class='indent'><code>&lt;axis&gt;</code>: The target axis (1 = X axis, 2 = Y axis)
+</div><div class='indent'><code>&lt;min&gt;</code>, <code>&lt;max&gt;</code>: The range of the new generated function.
+</div><div class='indent'><code>&lt;steps&gt;</code>: Number of steps for the function.
+</div><div class='indent'><code>&lt;expr&gt;</code>: Expression which defines the function. 
+</div><hr />
+<p><code>bcalc &lt;buffer1&gt; &lt;operator&gt; &lt;buffer2&gt; </code>
+</p><div class='indent'>Performs basic calculations between two buffers. This work also for buffers with different X axis and different numbers of data points. Only the overlapping area will be processed and missing points will be interpolated.
+</div><div class='indent'><code>&lt;operator&gt;</code>: + - * /
+</div><hr />
+<p><code>calc &lt;data&gt; &lt;expr&gt; &lt;BUFFER&gt;</code>
+</p><div class='indent'>Performs a calculation on the data in the buffers.
+</div><div class='indent'><code>&lt;data&gt;</code>: The target axis (1 = X values, 2 = Y values, 3 = X error, 4 = Y error)
+</div><div class='indent'><code>&lt;expr&gt;</code>: Expression which defines the calculation. 
+</div><hr />
+<p><code>swapxy &lt;BUFFER&gt;</code>
+</p><div class='indent'>This function swaps the X and Y values. Error values will also be swapped if available. 
+</div><hr />
+<p><code>normx &lt;ref1&gt; &lt;ref2&gt; &lt;new1&gt; &lt;new2&gt; &lt;BUFFER&gt;</code>
+</p><div class='indent'>This function manipulates the buffers by stretching or shrinking along the X axis. The specified reference points in the data are changed in such a way that the <code>ref1</code> value becomes the <code>new1</code> value and the <code>ref2</code> value becomes the <code>new2</code> value.
+</div><hr />
+<p><code>normy &lt;ref1&gt; &lt;ref2&gt; &lt;new1&gt; &lt;new2&gt; &lt;BUFFER&gt;</code>
+</p><div class='indent'>This function manipulates the buffers by stretching or shrinking along the Y axis. The specified reference points in the data are changed in such a way that the <code>ref1</code> value becomes the <code>new1</code> value and the <code>ref2</code> value becomes the <code>new2</code> value.
+</div><hr />
+<p><code>movex &lt;from&gt; &lt;to&gt; &lt;BUFFER&gt;</code>
+</p><div class='indent'>This function moves the buffers on the X axis.
+</div><hr />
+<p><code>movey &lt;from&gt; &lt;to&gt; &lt;BUFFER&gt;</code>
+</p><div class='indent'>This function moves the buffers on the Y axis.
+</div><hr />
+<p><code>cutoutsidex &lt;min&gt; &lt;max&gt; &lt;BUFFER&gt;</code>
+</p><div class='indent'>This function delete all data points in the buffers which are not in the X range between <code>min</code> and <code>max</code>
+</div><hr />
+<p><code>cutinsidex &lt;min&gt; &lt;max&gt; &lt;BUFFER&gt;</code>
+</p><div class='indent'>This function delete all data points in the buffers which are in the X range between <code>min</code> and <code>max</code>
+</div><hr />
+<p><code>cutoutsidey &lt;min&gt; &lt;max&gt; &lt;BUFFER&gt;</code>
+</p><div class='indent'>This function delete all data points in the buffers which are not in the Y range between <code>min</code> and <code>max</code>
+</div><hr />
+<p><code>cutinsidey &lt;min&gt; &lt;max&gt; &lt;BUFFER&gt;</code>
+</p><div class='indent'>This function delete all data points in the buffers which are in the Y range between <code>min</code> and <code>max</code>
+</div><hr />
+<p><code>calcint &lt;min&gt; &lt;max&gt; &lt;BUFFER&gt;</code>
+</p><div class='indent'>Integrates the buffers and add the result to the comment field. The result of the last integration is stored in the variable <code>integral</code>.
+</div><hr />
+<p><code>linreg &lt;min&gt; &lt;max&gt; &lt;BUFFER&gt;</code>
+</p><div class='indent'>Perform a linear regression between <code>min</code> and <code>max</code>. The result of the last regression will be stored in the variables <code>rega</code>, <code>regb</code> and <code>regr</code>.
+</div><hr />
+<p><code>logreg &lt;min&gt; &lt;max&gt; &lt;BUFFER&gt;</code>
+</p><div class='indent'>Perform a logarithmic regression between <code>min</code> and <code>max</code>. The result of the last regression will be stored in the variables <code>rega</code>, <code>regb</code> and <code>regr</code>.
+</div><hr />
+<p><code>expreg &lt;min&gt; &lt;max&gt; &lt;BUFFER&gt;</code>
+</p><div class='indent'>Perform a exponential regression between <code>min</code> and <code>max</code>. The result of the last regression will be stored in the variables <code>rega</code>, <code>regb</code> and <code>regr</code>
+</div><hr />
+<p><code>linbg &#60;a&#62; &#60;b&#62; &lt;BUFFER&gt;</code>
+</p><div class='indent'>Perform a linear background subtraction (y=y+a+bx)
+</div><hr />
+<p><code>smooth &lt;factor&gt; &lt;BUFFER&gt;</code>
+</p><div class='indent'>This function uses <code>factor</code> as the effective smooth width and performs a least square smooth to reduce the noise on the buffer.
+</div><hr />
+<p><code>fftsmooth &lt;factor&gt; &lt;BUFFER&gt;</code>
+</p><div class='indent'>This function uses <code>factor</code> as the effective smooth width and performs an FFT based smooth to reduce the noise on the buffer.
+</div><hr />
+<p><code>datareduction &lt;n&gt; &lt;BUFFER&gt;</code>
+</p><div class='indent'>Sometimes it is useful to reduce a large number of data points which consist mainly of noise to a more practical amount of points. This function takes <code>n</code> points, builds the average, and replaces the n points with the new one.
+</div><hr />
+<p><code>spline &lt;points&gt; &lt;strength&gt; &lt;BUFFER&gt;</code>
+</p><div class='indent'>This function calculates a nonparametric cubic spline interpolation.
+</div><div class='indent'><code>&lt;points&gt;</code>: Defines the number of points which should be calculated for each interval.
+</div><div class='indent'><code>&lt;strength&gt;</code>: Defines the strength of the interpolation. 2 is in most cases a good choice.
+</div><hr />
+<p><code>fft &lt;windowing&gt; &lt;BUFFER&gt;</code>
+</p><div class='indent'>Performs a Fast Fourier Transform and generates a new buffer with the result.
+</div><div class='indent'><code>&lt;windowing&gt;</code>: 1=none, 2=Hanning, 3=Welch, 4=Parzen
+</div><hr />
+<p><code>diff &lt;interval&gt; &lt;BUFFER&gt;</code>
+</p><div class='indent'>Differentiate the buffers and generate new buffers with the result data.
+</div><hr />
+<p><code>integrate &lt;BUFFER&gt;</code>
+</p><div class='indent'>Integrates buffers and generate new buffers with the result data.
+</div><hr />
+<p><code>setxval &lt;BUFFER&gt; &lt;index&gt; &lt;value&gt;</code>
+</p><div class='indent'>Set the X value at the given index of the buffers.
+</div><hr />
+<p><code>setyval &lt;BUFFER&gt; &lt;index&gt; &lt;value&gt;</code>
+</p><div class='indent'>Set the Y value at the given index of the buffers.
+</div><hr />
+<p><code>setxeval &lt;BUFFER&gt; &lt;index&gt; &lt;value&gt;</code>
+</p><div class='indent'>Set the X error value at the given index of the buffers.
+</div><hr />
+<p><code>setyeval &lt;BUFFER&gt; &lt;index&gt; &lt;value&gt;</code>
+</p><div class='indent'>Set the Y error value at the given index of the buffers.
+</div><p class='vspace'><br clear='all' />
+</p>
+<div class='vspace'></div>
+</div>
+
+			</div>
+	</div>
+</div>
+</body></html>

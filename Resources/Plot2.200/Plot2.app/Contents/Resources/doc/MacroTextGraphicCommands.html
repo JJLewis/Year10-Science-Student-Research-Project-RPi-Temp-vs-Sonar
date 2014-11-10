@@ -1,0 +1,192 @@
+<!DOCTYPE 
+  HTML PUBLIC 
+  "-//W3C//DTD HTML 4.01 Transitional//EN" 
+  "http://www.w3.org/TR/html4/loose.dtd">
+
+<html><head>
+<title>Plot2 Documentation : Doc - Macro Text Graphic Commands browse</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>  <meta name='robots' content='index,follow' />
+
+<link rel='stylesheet' href='plot2.css' type='text/css' />
+</head>
+
+<body bgcolor="#ffffff">
+
+<div id="main">
+	<div class="content-mat">
+		<div id="content">
+			<div id='sidebar'><div><img src='Plot2Icon.png' alt='' title='' /></div>
+<div class='vspace'></div><h2>Home</h2>
+<p><a class='wikilink' href='Introduction.html'>Introduction</a>
+</p>
+<div class='vspace'></div><h2>References</h2>
+<p><a class='wikilink' href='Toolbar.html'>Toolbar</a><br /><a class='wikilink' href='Expressions.html'>Expressions</a><br /><a class='wikilink' href='TimeFormat.html'>Time Format</a><br /><a class='wikilink' href='Preferences.html'>Preferences</a><br /><a class='wikilink' href='Import.html'>Import</a><br /><a class='wikilink' href='PerlImport.html'>Perl Import Filter</a><br /><a class='wikilink' href='PerlFilter.html'>Perl Data Filter</a><br /><a class='wikilink' href='CommandLine.html'>Command Line</a>
+</p>
+<div class='vspace'></div><h2>Inspectors</h2>
+<p><a class='wikilink' href='DataBufferInspector.html'>Data Buffer</a><br /><a class='wikilink' href='DataInspector.html'>Data</a><br /><a class='wikilink' href='MacroEditor.html'>Macro</a><br /><a class='wikilink' href='MysqlImportEditor.html'>MySQL</a>
+</p>
+<div class='vspace'></div><h2>Macro</h2>
+<p><a class='wikilink' href='MacroLanguage.html'>Macro Language</a><br /><a class='wikilink' href='MacroRangeCommands.html'>Range</a><br /><a class='wikilink' href='MacroBufferCommands.html'>Buffer</a><br /><a class='wikilink' href='MacroControlCommands.html'>Control</a><br /><a class='wikilink' href='MacroInteractiveCommands.html'>Interactive</a><br /><a class='wikilink' href='MacroCalculationCommands.html'>Calculation</a><br /><a class='wikilink' href='MacroStyleCommands.html'>Style</a><br /><a class='wikilink' href='MacroDataStyleCommands.html'>Data Style</a><br /><a class='wikilink' href='MacroAxisStyleCommands.html'>Axis Style</a><br /><a class='wikilink' href='MacroLegendCommands.html'>Legend</a><br /><a class='selflink' href='MacroTextGraphicCommands.html'>Text &amp; Graphic</a><br /><a class='wikilink' href='MacroDocumentCommands.html'>Document</a><br /><a class='wikilink' href='MacroMiscCommands.html'>Miscellaneous</a>
+</p>
+<div class='vspace'></div><h2>Miscellaneous</h2>
+<p><a class='wikilink' href='Contact.html'>Contact</a><br /><a class='wikilink' href='Warranty.html'>Warranty</a>
+</p>
+<div class='vspace'></div>
+</div>
+				<!--PageText-->
+<div id='wikitext'>
+<h1>Macro Language: Text &amp; Graphic Commands</h1>
+<p><code>text &lt;tag&gt; &lt;x&gt; &lt;y&gt; &lt;font&gt; &lt;font size&gt; &lt;text&gt; [c] [c] [c] [angle] [align] [pos] [offset] [cb] [cb] [cb]</code>
+</p><div class='indent'>Adds a text label to the document.
+</div><div class='indent'><code>&lt;tag&gt;</code>: The <code>tag</code> argument should be an integer value which can be used later to address a graphic or text object. Interactively created text or graphic objects always have the tag 0.    
+</div><div class='indent'><code>&lt;x&gt;</code>, <code>&lt;y&gt;</code>: the position in screen coordinates of the text.
+</div><div class='indent'><code>&lt;font&gt;</code>: The font for the text (e.g. <em>Helvetica-Bold</em>)
+</div><div class='indent'><code>&lt;font size&gt;</code>: The font size of the text.
+</div><div class='indent'><code>[c] [c] [c]</code>: The color of the text. Dependent on the color mode the three values are RGB or HSB values from 0.0 to 1.0. The color mode can be set with the command <code>colormode</code> (0=RGB, 1=HSB). 
+</div><div class='indent'><code>[angle]</code>: The text angle.
+</div><div class='indent'><code>[align]</code>: The text alignment (0=left, 1=center, 2=right).
+</div><div class='indent'><code>[pos]</code>: The position for automatically positioned text label (0=off, 1-21 fixed text positions).
+<div class='indent'><img width='128' src='autoposalign.png' alt='' title='' />
+</div></div><div class='indent'><code>[offset]</code>: Offset for automatically positioned text label.
+</div><div class='indent'><code>[cb] [cb] [cb]</code>: The color of the text background. Dependent on the color mode the three values are RGB or HSB values from 0.0 to 1.0. The color mode can be set with the command <code>colormode</code> (0=RGB, 1=HSB).
+</div><hr />
+<p><code>ftext &lt;tag&gt; &lt;COOR&gt; &lt;x&gt; &lt;y&gt; &lt;font&gt; &lt;font size&gt; &lt;text&gt; [c] [c] [c] [angle] [align] [tbalign] [cb] [cb] [cb]</code>
+</p><div class='indent'>Adds a floating text label to the document.
+</div><div class='indent'><code>&lt;tag&gt;</code>: The <code>tag</code> argument should be an integer value which can be used later to address a graphic or text object. Interactively created text or graphic objects always have the tag 0.    
+</div><div class='indent'><code>&lt;COOR&gt;</code>: The coordinate system to which the rectangle belongs.
+</div><div class='indent'><code>&lt;x&gt;</code>, <code>&lt;y&gt;</code>: the position of the text in the defined coordinate system.
+</div><div class='indent'><code>&lt;font&gt;</code>: The font for the text (e.g. <em>Helvetica-Bold</em>)
+</div><div class='indent'><code>&lt;font size&gt;</code>: The font size of the text.
+</div><div class='indent'><code>[c] [c] [c]</code>: The color of the text. Dependent on the color mode the three values are RGB or HSB values from 0.0 to 1.0. The color mode can be set with the command <code>colormode</code> (0=RGB, 1=HSB). 
+</div><div class='indent'><code>[angle]</code>: The text angle.
+</div><div class='indent'><code>[align]</code>: The text alignment (0=left, 1=center, 2=right).
+</div><div class='indent'><code>[tbalign] </code>: The text box alignment.
+<div class='indent'><img width='128' src='textboxalign.png' alt='' title='' />
+</div></div><div class='indent'><code>[pos]</code>: The position for automatically positioned text label (0=off, 1-21 fixed text positions).
+<div class='indent'><img width='128' src='autoposalign.png' alt='' title='' />
+</div></div><div class='indent'><code>[offset]</code>: Offset for automatically positioned text label.
+</div><div class='indent'><code>[cb] [cb] [cb]</code>: The color of the text background. Dependent on the color mode the three values are RGB or HSB values from 0.0 to 1.0. The color mode can be set with the command <code>colormode</code> (0=RGB, 1=HSB).
+</div><hr />
+<p><code>qtext &lt;COOR&gt; &lt;x&gt; &lt;y&gt; &lt;text&gt; [angle] [align] [tbalign] [COLOR]</code>
+</p><div class='indent'>Adds a text label to the document. This command uses the default color and the default font. The generated text label has the tag 999. 
+</div><div class='indent'><code>&lt;COOR&gt;</code>: The coordinate system to which the rectangle belongs.
+</div><div class='indent'><code>&lt;x&gt;</code>, <code>&lt;y&gt;</code>: the position in screen coordinates of the text.
+</div><div class='indent'><code>[angle]</code>: The text angle.
+</div><div class='indent'><code>[align]</code>: The text alignment (0=left, 1=center, 2=right).
+</div><div class='indent'><code>[tbalign]</code>: The text box alignment.
+</div><div class='indent'><code>[COLOR]</code>: The text color as hexadecimal string.
+<div class='indent'><img width='128' src='textboxalign.png' alt='' title='' />
+</div></div><hr />
+<p><code>rect &lt;tag&gt; &lt;COOR&gt; &lt;x&gt; &lt;y&gt; &lt;w&gt; &lt;h&gt; [linewidth] [dash] [c] [c] [c]</code><br /><code>rect &lt;tag&gt; &lt;COOR&gt; &lt;x&gt; &lt;y&gt; &lt;w&gt; &lt;h&gt; [linewidth] [dash] [COLOR]</code>
+</p><div class='indent'>Draw a rectangle with the given attributes.
+</div><div class='indent'><code>&lt;tag&gt;</code>: The <code>tag</code> argument should be an integer value which can be used later to address a graphic or text object. Interactively created text or graphic objects always have the tag 0.    
+</div><div class='indent'><code>&lt;COOR&gt;</code>: The coordinate system to which the rectangle belongs.
+</div><div class='indent'><code>&lt;x&gt;</code>, <code>&lt;y&gt;</code>: The position of the rectangle in the defined coordinate system.
+</div><div class='indent'><code>&lt;w&gt;</code>, <code>&lt;h&gt;</code>: The size of the rectangle in the defined coordinate system.
+</div><div class='indent'><code>[linewidth]</code>: The rectangles line width.
+</div><div class='indent'><code>[dash]</code>: The dash pattern for the rectangle (0-15).
+</div><div class='indent'><code>[c] [c] [c]</code>: The color of the rectangle. Dependent on the color mode the three values are RGB or HSB values from 0.0 to 1.0. The color mode can be set with the command <code>colormode</code> (0=RGB, 1=HSB). Alternative you can specify the color as hexadecimal string.
+</div><hr />
+<p><code>frect &lt;tag&gt; &lt;COOR&gt; &lt;x&gt; &lt;y&gt; &lt;w&gt; &lt;h&gt; [linewidth] [dash] [c] [c] [c] [cf] [cf] [cf]</code><br /><code>frect &lt;tag&gt; &lt;COOR&gt; &lt;x&gt; &lt;y&gt; &lt;w&gt; &lt;h&gt; [linewidth] [dash] [COLOR] [COLOR]</code>
+</p><div class='indent'>Draw a filled rectangle with the given attributes.
+</div><div class='indent'><code>&lt;tag&gt;</code>: The <code>tag</code> argument should be an integer value which can be used later to address a graphic or text object. Interactively created text or graphic objects always have the tag 0.    
+</div><div class='indent'><code>&lt;COOR&gt;</code>: The coordinate system to which the rectangle belongs.
+</div><div class='indent'><code>&lt;x&gt;</code>, <code>&lt;y&gt;</code>: The position of the rectangle in the defined coordinate system.
+</div><div class='indent'><code>&lt;w&gt;</code>, <code>&lt;h&gt;</code>: The size of the rectangle in the defined coordinate system.
+</div><div class='indent'><code>[linewidth]</code>: The rectangles line width.
+</div><div class='indent'><code>[dash]</code>: The dash pattern for the rectangle (0-15).
+</div><div class='indent'><code>[c] [c] [c]</code>: The color of the rectangle. Dependent on the color mode the three values are RGB or HSB values from 0.0 to 1.0. The color mode can be set with the command <code>colormode</code> (0=RGB, 1=HSB). Alternative you can specify the color as hexadecimal string.
+</div><div class='indent'><code>[cf] [cf] [cf]</code>: The fill color of the rectangle. Dependent on the color mode the three values are RGB or HSB values from 0.0 to 1.0. The color mode can be set with the command <code>colormode</code> (0=RGB, 1=HSB). Alternative you can specify the color as hexadecimal string.
+</div><hr />
+<p><code>circle &lt;tag&gt; &lt;COOR&gt; &lt;x&gt; &lt;y&gt; &lt;w&gt; &lt;h&gt; [linewidth] [dash] [c] [c] [c]</code><br /><code>circle &lt;tag&gt; &lt;COOR&gt; &lt;x&gt; &lt;y&gt; &lt;w&gt; &lt;h&gt; [linewidth] [dash]  [COLOR]</code>
+</p><div class='indent'>Draw a circle with the given attributes.
+</div><div class='indent'><code>&lt;tag&gt;</code>: The <code>tag</code> argument should be an integer value which can be used later to address a graphic or text object. Interactively created text or graphic objects always have the tag 0.    
+</div><div class='indent'><code>&lt;COOR&gt;</code>: The coordinate system to which the circle belongs.
+</div><div class='indent'><code>&lt;x&gt;</code>, <code>&lt;y&gt;</code>: The position of the circle in the defined coordinate system.
+</div><div class='indent'><code>&lt;w&gt;</code>, <code>&lt;h&gt;</code>: The size of the circle of the defined coordinate system.
+</div><div class='indent'><code>[linewidth]</code>: The circles line width.
+</div><div class='indent'><code>[dash]</code>: The dash pattern for the circle (0-15).
+</div><div class='indent'><code>[c] [c] [c]</code>: The color of the circle. Dependent on the color mode the three values are RGB or HSB values from 0.0 to 1.0. The color mode can be set with the command <code>colormode</code> (0=RGB, 1=HSB). Alternative you can specify the color as hexadecimal string.
+</div><hr />
+<p><code>fcircle &lt;tag&gt; &lt;COOR&gt; &lt;x&gt; &lt;y&gt; &lt;w&gt; &lt;h&gt; [linewidth] [dash] [c] [c] [c] [cf] [cf] [cf]</code><br /><code>fcircle &lt;tag&gt; &lt;COOR&gt; &lt;x&gt; &lt;y&gt; &lt;w&gt; &lt;h&gt; [linewidth] [dash] [COLOR] [COLOR]</code>
+</p><div class='indent'>Draw a filled circle with the given attributes.
+</div><div class='indent'><code>&lt;tag&gt;</code>: The <code>tag</code> argument should be an integer value which can be used later to address a graphic or text object. Interactively created text or graphic objects always have the tag 0.    
+</div><div class='indent'><code>&lt;COOR&gt;</code>: The coordinate system to which the circle belongs.
+</div><div class='indent'><code>&lt;x&gt;</code>, <code>&lt;y&gt;</code>: The position of the circle in the defined coordinate system.
+</div><div class='indent'><code>&lt;w&gt;</code>, <code>&lt;h&gt;</code>: The size of the circle of the defined coordinate system.
+</div><div class='indent'><code>[linewidth]</code>: The circles line width.
+</div><div class='indent'><code>[dash]</code>: The dash pattern for the circle (0-15).
+</div><div class='indent'><code>[c] [c] [c]</code>: The color of the circle. Dependent on the color mode the three values are RGB or HSB values from 0.0 to 1.0. The color mode can be set with the command <code>colormode</code> (0=RGB, 1=HSB). Alternative you can specify the color as hexadecimal string.
+</div><div class='indent'><code>[cf] [cf] [cf]</code>: The fill color of the circle. Dependent on the color mode the three values are RGB or HSB values from 0.0 to 1.0. The color mode can be set with the command <code>colormode</code> (0=RGB, 1=HSB). Alternative you can specify the color as hexadecimal string.
+</div><hr />
+<p><code>arrow &lt;tag&gt; &lt;COOR&gt; &lt;x1&gt; &lt;y1&gt; &lt;x2&gt; &lt;y2&gt; &#60;a1&#62; &#60;a2&#62; &lt;at&gt; &lt;as&gt;  [linewidth] [dash] [c] [c] [c]</code><br /><code>arrow &lt;tag&gt; &lt;COOR&gt; &lt;x1&gt; &lt;y1&gt; &lt;x2&gt; &lt;y2&gt; &#60;a1&#62; &#60;a2&#62; &lt;at&gt; &lt;as&gt;  [linewidth] [dash] [COLOR]</code>
+</p><div class='indent'>Draw an arrow with the given attributes.
+</div><div class='indent'><code>&lt;tag&gt;</code>: The <code>tag</code> argument should be an integer value which can be used later to address a graphic or text object. Interactively created text or graphic objects always have the tag 0.    
+</div><div class='indent'><code>&lt;COOR&gt;</code>: The coordinate system to which the arrow belongs.
+</div><div class='indent'><code>&lt;x1&gt;</code>, <code>&lt;y1&gt;</code>, <code>&lt;x2&gt;</code>, <code>&lt;y2&gt;</code>: The start and end position of the arrow in the defined coordinate system.
+</div><div class='indent'><code>&#60;a1&#62;</code>, <code>&#60;a2&#62;</code>: Draw arrow at line start and/or end (possible values: yes/no)
+</div><div class='indent'><code>&lt;at&gt;</code>: The arrow type (0=open, 1=closed, 2=triangle, 3=double).
+</div><div class='indent'><code>&lt;as&gt;</code>: The arrow size.
+</div><div class='indent'><code>[linewidth]</code>: The arrow line width.
+</div><div class='indent'><code>[dash]</code>: The dash pattern for the arrow (0-15).
+</div><div class='indent'><code>[c] [c] [c]</code>: The color of the arrow. Dependent on the color mode the three values are RGB or HSB values from 0.0 to 1.0. The color mode can be set with the command <code>colormode</code> (0=RGB, 1=HSB). Alternative you can specify the color as hexadecimal string.
+</div><hr />
+<p><code>line &lt;tag&gt; &lt;COOR&gt; &lt;x1&gt; &lt;y1&gt; &lt;x2&gt; &lt;y2&gt; [linewidth] [dash] [c] [c] [c]</code><br /><code>line &lt;tag&gt; &lt;COOR&gt; &lt;x1&gt; &lt;y1&gt; &lt;x2&gt; &lt;y2&gt; [linewidth] [dash] [COLOR]</code>
+</p><div class='indent'>Draw a line with the given attributes.
+</div><div class='indent'><code>&lt;tag&gt;</code>: The <code>tag</code> argument should be an integer value which can be used later to address a graphic or text object. Interactively created text or graphic objects always have the tag 0.    
+</div><div class='indent'><code>&lt;COOR&gt;</code>: The coordinate system to which the line belongs.
+</div><div class='indent'><code>&lt;x1&gt;</code>, <code>&lt;y1&gt;</code>, <code>&lt;x2&gt;</code>, <code>&lt;y2&gt;</code>: The start and end position of the line in the defined coordinate system.
+</div><div class='indent'><code>[linewidth]</code>: The line width.
+</div><div class='indent'><code>[dash]</code>: The dash pattern for the line (0-15).
+</div><div class='indent'><code>[c] [c] [c]</code>: The color of the line. Dependent on the color mode the three values are RGB or HSB values from 0.0 to 1.0. The color mode can be set with the command <code>colormode</code> (0=RGB, 1=HSB). Alternative you can specify the color as hexadecimal string.
+</div><hr />
+<p><code>rmtext &lt;tag&gt;</code>
+</p><div class='indent'>Remove text object with the tag <code>tag</code>.
+</div><hr />
+<p><code>rmgraphic &lt;tag&gt;</code>
+</p><div class='indent'>Remove graphic object with the tag <code>tag</code>.
+</div><hr />
+<p><code>defaultfont &lt;font&gt; &lt;font size&gt;</code>
+</p><div class='indent'>Defines a default font for all text and graphic commands.
+</div><hr />
+<p><code>defaultcolor &lt;c&gt; &lt;c&gt; &lt;c&gt;</code><br /><code>defaultcolor &lt;COLOR&gt;</code>
+</p><div class='indent'>Defines a default color for all text and graphic commands.
+</div><div class='indent'><code>&lt;c&gt; &lt;c&gt; &lt;c&gt;</code>: The color of the circle. Dependent on the color mode the three values are RGB or HSB values from 0.0 to 1.0. The color mode can be set with the command <code>colormode</code> (0=RGB, 1=HSB). Alternative you can specify the color as hexadecimal string.
+</div><p class='vspace'><br clear='all' />
+</p>
+</div>
+
+			</div>
+	</div>
+</div>
+</body></html>

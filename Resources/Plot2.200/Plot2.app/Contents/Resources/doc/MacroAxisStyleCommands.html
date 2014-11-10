@@ -1,0 +1,230 @@
+<!DOCTYPE 
+  HTML PUBLIC 
+  "-//W3C//DTD HTML 4.01 Transitional//EN" 
+  "http://www.w3.org/TR/html4/loose.dtd">
+
+<html><head>
+<title>Plot2 Documentation : Doc - Macro Axis Style Commands browse</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>  <meta name='robots' content='index,follow' />
+
+<link rel='stylesheet' href='plot2.css' type='text/css' />
+</head>
+
+<body bgcolor="#ffffff">
+
+<div id="main">
+	<div class="content-mat">
+		<div id="content">
+			<div id='sidebar'><div><img src='Plot2Icon.png' alt='' title='' /></div>
+<div class='vspace'></div><h2>Home</h2>
+<p><a class='wikilink' href='Introduction.html'>Introduction</a>
+</p>
+<div class='vspace'></div><h2>References</h2>
+<p><a class='wikilink' href='Toolbar.html'>Toolbar</a><br /><a class='wikilink' href='Expressions.html'>Expressions</a><br /><a class='wikilink' href='TimeFormat.html'>Time Format</a><br /><a class='wikilink' href='Preferences.html'>Preferences</a><br /><a class='wikilink' href='Import.html'>Import</a><br /><a class='wikilink' href='PerlImport.html'>Perl Import Filter</a><br /><a class='wikilink' href='PerlFilter.html'>Perl Data Filter</a><br /><a class='wikilink' href='CommandLine.html'>Command Line</a>
+</p>
+<div class='vspace'></div><h2>Inspectors</h2>
+<p><a class='wikilink' href='DataBufferInspector.html'>Data Buffer</a><br /><a class='wikilink' href='DataInspector.html'>Data</a><br /><a class='wikilink' href='MacroEditor.html'>Macro</a><br /><a class='wikilink' href='MysqlImportEditor.html'>MySQL</a>
+</p>
+<div class='vspace'></div><h2>Macro</h2>
+<p><a class='wikilink' href='MacroLanguage.html'>Macro Language</a><br /><a class='wikilink' href='MacroRangeCommands.html'>Range</a><br /><a class='wikilink' href='MacroBufferCommands.html'>Buffer</a><br /><a class='wikilink' href='MacroControlCommands.html'>Control</a><br /><a class='wikilink' href='MacroInteractiveCommands.html'>Interactive</a><br /><a class='wikilink' href='MacroCalculationCommands.html'>Calculation</a><br /><a class='wikilink' href='MacroStyleCommands.html'>Style</a><br /><a class='wikilink' href='MacroDataStyleCommands.html'>Data Style</a><br /><a class='selflink' href='MacroAxisStyleCommands.html'>Axis Style</a><br /><a class='wikilink' href='MacroLegendCommands.html'>Legend</a><br /><a class='wikilink' href='MacroTextGraphicCommands.html'>Text &amp; Graphic</a><br /><a class='wikilink' href='MacroDocumentCommands.html'>Document</a><br /><a class='wikilink' href='MacroMiscCommands.html'>Miscellaneous</a>
+</p>
+<div class='vspace'></div><h2>Miscellaneous</h2>
+<p><a class='wikilink' href='Contact.html'>Contact</a><br /><a class='wikilink' href='Warranty.html'>Warranty</a>
+</p>
+<div class='vspace'></div>
+</div>
+				<!--PageText-->
+<div id='wikitext'>
+<h1>Macro Language: Axis Style Commands</h1>
+<p><code>setaxis &lt;x axis 1&gt; &lt;y axis 1&gt; &lt;x axis 2&gt; &lt;y axis 2&gt;</code>
+</p><div class='indent'>Enable or disable axis drawing (possible values: yes/no) 
+</div><hr />
+<p><code>ascalstart &lt;AXIS&gt; &lt;start&gt;</code>
+</p><div class='indent'>Defines where axis scaling should start.
+</div><hr />
+<p><code>ascalend &lt;AXIS&gt; &lt;end&gt;</code>
+</p><div class='indent'>Defines where axis scaling should end.
+</div><hr />
+<p><code>asetreverse &lt;AXIS&gt; &lt;bool&gt;</code>
+</p><div class='indent'>If set the axis will be reverse plotted (possible values: yes/no) 
+</div><hr />
+<p><code>atickdist &lt;AXIS&gt; &lt;dist&gt;</code>
+</p><div class='indent'>Defines the distance between two major ticks. If your axis is a time axis you have to enter <code>days:hours:minutes:seconds</code> or <code>w</code> (1 week) or <code>m</code> (1 month) or <code>y</code> (1 year).
+</div><hr />
+<p><code>aminsteps &lt;AXIS&gt; &lt;steps&gt;</code>
+</p><div class='indent'>Defines the number of minor ticks between two major ticks.
+</div><hr />
+<p><code>atimeformat &lt;AXIS&gt; &lt;format&gt;</code>
+</p><div class='indent'>Defines the format used for the displaying time values on time axis (<a class='wikilink' href='TimeFormat.html'>time format tokens</a>).
+</div><hr />
+<p><code>atrigger &lt;AXIS&gt; &lt;trigger&gt;</code>
+</p><div class='indent'>This allows to define a trigger, a number where a tick should appear and all other ticks should depend on. 
+</div><hr />
+<p><code>ascalexpr &lt;AXIS&gt; &lt;expr&gt;</code>
+</p><div class='indent'>This allows scaling of axis numbers without changing the data itself. For example, to display seconds instead of milliseconds enter <code>v/1000</code> in this field. <em>v</em> is the variable which represents the axis number.
+</div><hr />
+<p><code>aexpoffset &lt;AXIS&gt; &lt;offset&gt;</code>
+</p><div class='indent'>Allows you to define the limit, above which numbers are plotted in exponential notation.  The number you define is the exponent of the limit.   
+</div><hr />
+<p><code>adecplaces &lt;AXIS&gt; &lt;n&gt;</code>
+</p><div class='indent'>Defines the number of decimal places for axis numbers.   
+</div><hr />
+<p><code>adecplacesauto &lt;AXIS&gt; &lt;bool&gt;</code>
+</p><div class='indent'>If enabled the number of decimal places for axis numbers will be determined automatically (possible values: yes/no).
+</div><hr />
+<p><code>aformat &lt;AXIS&gt; &lt;format&gt;</code>
+</p><div class='indent'>Defines the axis format (0=linear, 1=logarithmic, 2=time).
+</div><hr />
+<p><code>asetsmalllogzero &lt;AXIS&gt; &lt;bool&gt;</code>
+</p><div class='indent'>If enabled the smallest value on a logarithmic axis will be replaced with 0 (even if this is not correct) (possible values: yes/no).
+</div><hr />
+<p><code>atext &lt;AXIS&gt; &lt;text&gt;</code>
+</p><div class='indent'>Defines the axis text label.
+</div><hr />
+<p><code>anumfont &lt;AXIS&gt; &lt;font&gt; &lt;size&gt;</code>
+</p><div class='indent'>Defines the font for axis numbers.
+</div><hr />
+<p><code>anumoffset &lt;AXIS&gt; &lt;offset&gt;</code>
+</p><div class='indent'>The distance between numbers and frame.
+</div><hr />
+<p><code>anumalign &lt;AXIS&gt; &lt;align&gt;</code>
+</p><div class='indent'>Defines the alignment of axis numbers.
+</div><div class='indent'><code>&lt;align&gt;</code>: The text box alignment.
+<div class='indent'><img width='128' src='textboxalign.png' alt='' title='' />
+</div></div><hr />
+<p><code>anumangle &lt;AXIS&gt; &lt;angle&gt;</code>
+</p><div class='indent'>Defines the angle for axis numbers.
+</div><hr />
+<p><code>atextfont &lt;AXIS&gt; &lt;font&gt; &lt;size&gt;</code>
+</p><div class='indent'>Defines the font for axis text labels.
+</div><hr />
+<p><code>atextoffset &lt;AXIS&gt; &lt;offset&gt;</code>
+</p><div class='indent'>The distance between text label and frame.
+</div><hr />
+<p><code>atextoffsetwindow &lt;AXIS&gt; &lt;bool&gt;</code>
+</p><div class='indent'>If defined the axis text offset is the distance from the window frame.
+</div><hr />
+<p><code>asetnum &lt;AXIS&gt; &lt;bool&gt;</code>
+</p><div class='indent'>Enable or disable axis numbers (possible values: yes/no).
+</div><hr />
+<p><code>asettext &lt;AXIS&gt; &lt;bool&gt;</code>
+</p><div class='indent'>Enable or disable axis text labels (possible values: yes/no).
+</div><hr />
+<p><code>asetfliptext &lt;AXIS&gt; &lt;bool&gt;</code>
+</p><div class='indent'>Enable or disable flipped axis text labels (possible values: yes/no).
+</div><hr />
+<p><code>atextcolor &lt;AXIS&gt; &lt;c&gt; &lt;c&gt; &lt;c&gt; [a]</code><br /><code>atextcolor &lt;AXIS&gt; &lt;COLOR&gt;</code>
+</p><div class='indent'>Defines the color for axis numbers and text. Dependent on the color mode the three values are RGB or HSB values from 0.0 to 1.0. The color mode can be set with the command color mode (0=RGB, 1=HSB). With a the alpha value can be defined (default is 1.0). Alternative you can specify the color as hexadecimal string.
+</div><hr />
+<p><code>asetzeroline &lt;AXIS&gt; &lt;bool&gt;</code>
+</p><div class='indent'>Enable or disable a line at the value zero (possible values: yes/no).
+</div><hr />
+<p><code>azerolinecolor &lt;AXIS&gt; &lt;c&gt; &lt;c&gt; &lt;c&gt; [a]</code><br /><code>azerolinecolor &lt;AXIS&gt; &lt;COLOR&gt;</code>
+</p><div class='indent'>Defines the color for zero lines. Dependent on the color mode the three values are RGB or HSB values from 0.0 to 1.0. The color mode can be set with the command color mode (0=RGB, 1=HSB). With a the alpha value can be defined (default is 1.0). Alternative you can specify the color as hexadecimal string.
+</div><hr />
+<p><code>aticklength &lt;AXIS&gt; &lt;length&gt;</code>
+</p><div class='indent'>Defines the tick length.
+</div><hr />
+<p><code>aminticklength &lt;AXIS&gt; &lt;length&gt;</code>
+</p><div class='indent'>Defines the minor tick length.
+</div><hr />
+<p><code>atickwidth &lt;AXIS&gt; &lt;width&gt;</code>
+</p><div class='indent'>Defines the tick width.
+</div><hr />
+<p><code>amintickwidth &lt;AXIS&gt; &lt;width&gt;</code>
+</p><div class='indent'>Defines the minor tick width.
+</div><hr />
+<p><code>asetticks &lt;AXIS&gt; &lt;bool&gt;</code>
+</p><div class='indent'>Enable or disable axis ticks (possible values: yes/no).
+</div><hr />
+<p><code>asetminticks &lt;AXIS&gt; &lt;bool&gt;</code>
+</p><div class='indent'>Enable or disable axis minor ticks (possible values: yes/no).
+</div><hr />
+<p><code>asetticksbothsides &lt;AXIS&gt; &lt;bool&gt;</code>
+</p><div class='indent'>Enable or disable axis ticks on both sides of the frame (possible values: yes/no).
+</div><hr />
+<p><code>asetminticksbothsides &lt;AXIS&gt; &lt;bool&gt;</code>
+</p><div class='indent'>Enable or disable axis minor ticks on both sides of the frame (possible values: yes/no).
+</div><hr />
+<p><code>atickcolor &lt;AXIS&gt; &lt;c&gt; &lt;c&gt; &lt;c&gt; [a]</code><br /><code>atickcolor &lt;AXIS&gt; &lt;COLOR&gt;</code>
+</p><div class='indent'>Defines the tick color. Dependent on the color mode the three values are RGB or HSB values from 0.0 to 1.0. The color mode can be set with the command color mode (0=RGB, 1=HSB). With a the alpha value can be defined (default is 1.0). Alternative you can specify the color as hexadecimal string.
+</div><hr />
+<p><code>amintickcolor &lt;AXIS&gt; &lt;c&gt; &lt;c&gt; &lt;c&gt; [a]</code><br /><code>amintickcolor &lt;AXIS&gt; &lt;COLOR&gt;</code>
+</p><div class='indent'>Defines the minor tick color. Dependent on the color mode the three values are RGB or HSB values from 0.0 to 1.0. The color mode can be set with the command color mode (0=RGB, 1=HSB). With a the alpha value can be defined (default is 1.0). Alternative you can specify the color as hexadecimal string.
+</div><hr />
+<p><code>atickstyle &lt;AXIS&gt; &lt;style&gt;</code>
+</p><div class='indent'>Defines the tick style (0=inside, 1=outside, 2=both)
+</div><hr />
+<p><code>asetgrid &lt;AXIS&gt; &lt;bool&gt;</code>
+</p><div class='indent'>Enable or disable the grid (possible values: yes/no).
+</div><hr />
+<p><code>asetmingrid &lt;AXIS&gt; &lt;bool&gt;</code>
+</p><div class='indent'>Enable or disable the minor grid (possible values: yes/no).
+</div><hr />
+<p><code>agridcolor &lt;AXIS&gt; &lt;c&gt; &lt;c&gt; &lt;c&gt; [a]</code><br /><code>agridcolor &lt;AXIS&gt; &lt;COLOR&gt;</code>
+</p><div class='indent'>Defines the grid color. Dependent on the color mode the three values are RGB or HSB values from 0.0 to 1.0. The color mode can be set with the command color mode (0=RGB, 1=HSB). With a the alpha value can be defined (default is 1.0). Alternative you can specify the color as hexadecimal string.
+</div><hr />
+<p><code>amingridcolor &lt;AXIS&gt; &lt;c&gt; &lt;c&gt; &lt;c&gt; [a]</code><br /><code>amingridcolor &lt;AXIS&gt; &lt;COLOR&gt;</code>
+</p><div class='indent'>Defines the minor grid color. Dependent on the color mode the three values are RGB or HSB values from 0.0 to 1.0. The color mode can be set with the command color mode (0=RGB, 1=HSB). With a the alpha value can be defined (default is 1.0). Alternative you can specify the color as hexadecimal string.
+</div><hr />
+<p><code>agridwidth &lt;AXIS&gt; &lt;width&gt;</code>
+</p><div class='indent'>Defines the grid width.
+</div><hr />
+<p><code>amingridwidth &lt;AXIS&gt; &lt;width&gt;</code>
+</p><div class='indent'>Defines the minor grid width.
+</div><hr />
+<p><code>agridpattern &lt;AXIS&gt; &lt;pattern&gt;</code>
+</p><div class='indent'>Defines the grid dash pattern (0-15).
+</div><hr />
+<p><code>amingridpattern &lt;AXIS&gt; &lt;pattern&gt;</code>
+</p><div class='indent'>Defines the minor grid pattern (0-15).
+</div><hr />
+<p><code>agridfront &lt;AXIS&gt; &lt;bool&gt;</code>
+</p><div class='indent'>Defines if the grid should be drawn in front or not (possible values: yes/no).
+</div><hr />
+<p><code>amingridfront &lt;AXIS&gt; &lt;bool&gt;</code>
+</p><div class='indent'>Defines if the minor grid should be drawn in front or not (possible values: yes/no).
+</div><hr />
+<p><code>alabel &lt;AXIS&gt; &lt;number&gt; &lt;replacement&gt;</code>
+</p><div class='indent'>Defines an axis number replacement
+</div><hr />
+<p><code>aclearlabels &lt;AXIS&gt;</code>
+</p><div class='indent'>Delete all axis number replacement
+</div><p class='vspace'><br clear='all' />
+</p>
+</div>
+
+			</div>
+	</div>
+</div>
+</body></html>

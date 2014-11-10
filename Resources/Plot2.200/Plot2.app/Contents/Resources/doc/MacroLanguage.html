@@ -1,0 +1,211 @@
+<!DOCTYPE 
+  HTML PUBLIC 
+  "-//W3C//DTD HTML 4.01 Transitional//EN" 
+  "http://www.w3.org/TR/html4/loose.dtd">
+
+<html><head>
+<title>Plot2 Documentation : Doc - Macro Language browse</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>  <meta name='robots' content='index,follow' />
+
+<link rel='stylesheet' href='plot2.css' type='text/css' />
+</head>
+
+<body bgcolor="#ffffff">
+
+<div id="main">
+	<div class="content-mat">
+		<div id="content">
+			<div id='sidebar'><div><img src='Plot2Icon.png' alt='' title='' /></div>
+<div class='vspace'></div><h2>Home</h2>
+<p><a class='wikilink' href='Introduction.html'>Introduction</a>
+</p>
+<div class='vspace'></div><h2>References</h2>
+<p><a class='wikilink' href='Toolbar.html'>Toolbar</a><br /><a class='wikilink' href='Expressions.html'>Expressions</a><br /><a class='wikilink' href='TimeFormat.html'>Time Format</a><br /><a class='wikilink' href='Preferences.html'>Preferences</a><br /><a class='wikilink' href='Import.html'>Import</a><br /><a class='wikilink' href='PerlImport.html'>Perl Import Filter</a><br /><a class='wikilink' href='PerlFilter.html'>Perl Data Filter</a><br /><a class='wikilink' href='CommandLine.html'>Command Line</a>
+</p>
+<div class='vspace'></div><h2>Inspectors</h2>
+<p><a class='wikilink' href='DataBufferInspector.html'>Data Buffer</a><br /><a class='wikilink' href='DataInspector.html'>Data</a><br /><a class='wikilink' href='MacroEditor.html'>Macro</a><br /><a class='wikilink' href='MysqlImportEditor.html'>MySQL</a>
+</p>
+<div class='vspace'></div><h2>Macro</h2>
+<p><a class='selflink' href='MacroLanguage.html'>Macro Language</a><br /><a class='wikilink' href='MacroRangeCommands.html'>Range</a><br /><a class='wikilink' href='MacroBufferCommands.html'>Buffer</a><br /><a class='wikilink' href='MacroControlCommands.html'>Control</a><br /><a class='wikilink' href='MacroInteractiveCommands.html'>Interactive</a><br /><a class='wikilink' href='MacroCalculationCommands.html'>Calculation</a><br /><a class='wikilink' href='MacroStyleCommands.html'>Style</a><br /><a class='wikilink' href='MacroDataStyleCommands.html'>Data Style</a><br /><a class='wikilink' href='MacroAxisStyleCommands.html'>Axis Style</a><br /><a class='wikilink' href='MacroLegendCommands.html'>Legend</a><br /><a class='wikilink' href='MacroTextGraphicCommands.html'>Text &amp; Graphic</a><br /><a class='wikilink' href='MacroDocumentCommands.html'>Document</a><br /><a class='wikilink' href='MacroMiscCommands.html'>Miscellaneous</a>
+</p>
+<div class='vspace'></div><h2>Miscellaneous</h2>
+<p><a class='wikilink' href='Contact.html'>Contact</a><br /><a class='wikilink' href='Warranty.html'>Warranty</a>
+</p>
+<div class='vspace'></div>
+</div>
+				<!--PageText-->
+<div id='wikitext'>
+<h1>Macro Language</h1>
+<h2>Introduction</h2>
+<p>There are ~ 220 commands available in the <em>Plot</em> macro language. Most of the commands need one or more argument. Simply enter the command followed by the arguments separated by spaces. If an argument contains spaces you have to quote the argument with <code>'</code> or <code>"</code>. Comments can be escaped with <code>#</code>. For example a command may look like this:
+</p>
+<div class='vspace'></div><div class='indent'><code>atext xb 'Axis Text'</code>
+</div><p class='vspace'>This command sets the axis text label for the first (bottom) X axis.
+</p>
+<div class='vspace'></div><h2>Variables</h2>
+<p>During macro execution several variables are available. String variable starts with a <code>$</code> sign.
+</p>
+<table border='1' ><tr ><td ><code>cb</code></td><td >number of the current working buffer in the document</td></tr>
+<tr ><td ><code>$date</code></td><td >the current date</td></tr>
+<tr ><td ><code>$document</code></td><td >the filename of the current document</td></tr>
+<tr ><td ><code>dx1</code></td><td >the distance between the last two measures with the mouse (1. X axis)</td></tr>
+<tr ><td ><code>dx2</code></td><td >the distance between the last two measures with the mouse (2. X axis)</td></tr>
+<tr ><td ><code>dy1</code></td><td >the distance between the last two measures with the mouse (1. Y axis)</td></tr>
+<tr ><td ><code>dy2</code></td><td >the distance between the last two measures with the mouse (2. Y axis)</td></tr>
+<tr ><td ><code>$file</code></td><td >the filename from the <code>browse</code> command</td></tr>
+<tr ><td ><code>framebottom</code></td><td  align='left'>the position of bottom frame line</td></tr>
+<tr ><td ><code>frameleft</code></td><td >the position of left frame line</td></tr>
+<tr ><td ><code>frameright</code></td><td  align='left'>the position of right frame line</td></tr>
+<tr ><td ><code>frametop</code></td><td  align='left'>the position of top frame line</td></tr>
+<tr ><td ><code>framewidth</code></td><td >the width of the frame</td></tr>
+<tr ><td ><code>$home</code></td><td >the users home directory</td></tr>
+<tr ><td ><code>input</code></td><td >the result of the last input command</td></tr>
+<tr ><td ><code>$input</code></td><td >the result of the last input command as string</td></tr>
+<tr ><td ><code>integral</code></td><td >the result from the last <code>calcint</code> command</td></tr>
+<tr ><td ><code>l</code></td><td >the run variable for loops</td></tr>
+<tr ><td ><code>lx</code></td><td >the X value during a data loop</td></tr>
+<tr ><td ><code>ly</code></td><td >the Y value during a data loop</td></tr>
+<tr ><td ><code>lxe</code></td><td >the X error value during a data loop</td></tr>
+<tr ><td ><code>lye</code></td><td >the X error value during a data loop</td></tr>
+<tr ><td ><code>lastbuffer</code></td><td >the number of the last buffer generated by one of the calculation commands</td></tr>
+<tr ><td ><code>marginbottom</code></td><td >the bottom margin</td></tr>
+<tr ><td ><code>marginleft</code></td><td >the left margin</td></tr>
+<tr ><td ><code>marginright</code></td><td >the right margin</td></tr>
+<tr ><td ><code>margintop</code></td><td >the top margin</td></tr>
+<tr ><td ><code>nb</code></td><td >number of data buffer in the document</td></tr>
+<tr ><td ><code>option</code></td><td >the result of the <code>askoption</code> command</td></tr>
+<tr ><td ><code>ref1</code></td><td >the 1. reference value</td></tr>
+<tr ><td ><code>ref2</code></td><td >the 2. reference value</td></tr>
+<tr ><td ><code>linbga</code>, <code>linbgb</code></td><td >the reference values for linear background subtraction</td></tr>
+<tr ><td ><code>rega</code>, <code>regb</code>, <code>regr</code></td><td >the result of the last regression</td></tr>
+<tr ><td ><code>textheight</code></td><td  align='left'>the height of the last added text</td></tr>
+<tr ><td ><code>textwidth</code></td><td >the width of the last added text</td></tr>
+<tr ><td ><code>$time</code></td><td >the current time</td></tr>
+<tr ><td ><code>$user</code></td><td >the user name</td></tr>
+<tr ><td ><code>viewheight</code></td><td >the height of the current view</td></tr>
+<tr ><td ><code>viewwidth</code></td><td >the width of the current view</td></tr>
+<tr ><td ><code>windowheight</code></td><td >the window height</td></tr>
+<tr ><td ><code>windowwidth</code></td><td >the window width</td></tr>
+<tr ><td ><code>xpos1</code></td><td >the last result of the measure with the mouse (1. X axis)</td></tr>
+<tr ><td ><code>xpos2</code></td><td >the last result of the measure with the mouse (2. X axis)</td></tr>
+<tr ><td ><code>ypos1</code></td><td >the last result of the measure with the mouse (1. Y axis)</td></tr>
+<tr ><td ><code>ypos2</code></td><td >the last result of the measure with the mouse (2. Y axis)</td></tr>
+<tr ><td ><code>xmin1</code></td><td >min value of the 1. (bottom) X axis</td></tr>
+<tr ><td ><code>xmax1</code></td><td >max value of the 1. (bottom) X axis</td></tr>
+<tr ><td ><code>ymin1</code></td><td >min value of the 1. (left) Y axis</td></tr>
+<tr ><td ><code>ymax1</code></td><td >max value of the 1. (left) Y axis</td></tr>
+<tr ><td ><code>xmin2</code></td><td >min value of the 2. (top) X axis</td></tr>
+<tr ><td ><code>xmax2</code></td><td >max value of the 2. (top) X axis</td></tr>
+<tr ><td ><code>ymin2</code></td><td >min value of the 2. (right) Y axis</td></tr>
+<tr ><td ><code>ymax2</code></td><td >max value of the 2. (right) Y axis</td></tr>
+<tr ><td ><code>ut</code></td><td >Current UNIX Timestamp</td></tr>
+</table>
+<div class='vspace'></div><h2>Arguments</h2>
+<p>In the command descriptions on the following pages optional argument is written with surround square brackets
+(<code>[argument]</code>) and required arguments with angle brackets (<code>&lt;argument&gt;</code>).   
+</p>
+<p class='vspace'>There are also some special arguments:
+</p>
+<div class='vspace'></div><hr />
+<p class='vspace'><code>&lt;BUFFER&gt;</code>
+</p>
+<p class='vspace'>a list of one or more data buffers. Possible values are:
+</p>
+<div class='vspace'></div>
+<table border='1' ><tr ><td ><code>all</code></td><td >all buffers in the document</td></tr>
+<tr ><td ><code>selected</code></td><td >selected buffers in the document</td></tr>
+<tr ><td ><code>unselected</code></td><td >unselected buffers in the document</td></tr>
+<tr ><td ><code>visible</code></td><td >visible buffers in the document</td></tr>
+<tr ><td ><code>hidden</code></td><td >hidden buffers in the document</td></tr>
+<tr ><td ><code>none</code></td><td >no buffer</td></tr>
+<tr ><td ><code>b1,b2,b3,...,bn</code></td><td >a list of buffers where the arguments may be math expressions.</td></tr>
+<tr ><td ><code>bs..be</code></td><td >buffers from <em>bs</em> to <em>be</em></td></tr>
+</table>
+<div class='vspace'></div><hr />
+<p class='vspace'><code>&lt;AXIS&gt;</code>
+</p>
+<p class='vspace'>A definition of the four axis. Possible values are:
+</p>
+<table border='1' ><tr ><td ><code>all</code></td><td >all four axis</td></tr>
+<tr ><td ><code>x</code></td><td >both X axis</td></tr>
+<tr ><td ><code>y</code></td><td >both Y axis</td></tr>
+<tr ><td ><code>1, x1, xb, bottom</code></td><td >1. X axis (bottom)</td></tr>
+<tr ><td ><code>2, y1, yl, left</code></td><td >1. Y axis (left)</td></tr>
+<tr ><td ><code>3, x2, xt, top</code></td><td >2. X axis (top)</td></tr>
+<tr ><td ><code>4, y2, yr, right</code></td><td >2. Y axis (right)</td></tr>
+</table>
+<div class='vspace'></div><hr />
+<p class='vspace'><code>&lt;AXISGROUP&gt;</code>
+</p>
+<p class='vspace'>The coordinates system:
+</p>
+<table border='1' ><tr ><td ><code>0, both</code></td><td >both axis</td></tr>
+<tr ><td ><code>1, first</code></td><td >first axis (left and bottom)</td></tr>
+<tr ><td ><code>2, second</code></td><td >second axis (right and top)</td></tr>
+</table>
+<div class='vspace'></div><hr />
+<p class='vspace'><code>&lt;COOR&gt;</code>
+</p>
+<p class='vspace'>The coordinates system:
+</p>
+<table border='1' ><tr ><td ><code>0, screen</code></td><td >screen coordinates</td></tr>
+<tr ><td ><code>1, first</code></td><td >first axis (left and bottom)</td></tr>
+<tr ><td ><code>2, second</code></td><td >second axis (right and top)</td></tr>
+</table>
+<div class='vspace'></div><hr />
+<p class='vspace'><code>&lt;RANGE&gt;</code>
+</p>
+<p class='vspace'>A list of numbers (e.g. used for the <code>loop</code> command):
+</p>
+<table border='1' ><tr ><td ><code>n</code></td><td >defines a range from 0 to <em>n</em></td></tr>
+<tr ><td ><code>from:to:step</code></td><td >defines a range where the arguments may be math expressions.</td></tr>
+<tr ><td ><code>b1,b2,b3,...,bn</code></td><td >a list of numbers where the arguments may be math expressions.</td></tr>
+<tr ><td ><code>bs..be</code></td><td >numbers from <em>bs</em> to <em>be</em></td></tr>
+</table>
+<div class='vspace'></div><hr />
+<p class='vspace'><code>&lt;COLOR&gt;</code>
+</p>
+<p class='vspace'>This can be a hexadecimal color definition in the format RGB, ARGB, RRGGBB or AARRGGBB where R is red, G is green, B is blue and A is alpha.
+</p>
+<p class='vspace'>There are also named colors which can be used: black, white, red, green, blue, orange, yellow, magenta, cyan, aluminum, aqua, asparagus, banana, blueberry, bubblegum, cantaloupe, carnation, cayenne, clover, eggplant, fern, flora, grape, honeydew, ice, iron, lavender, lead, lemon, licorice, lime, magnesium, maraschino, maroon, mercury, midnight, mocha, moss, nickel, ocean, orchid, plum, salmon, seafoam, silver, sky, snow, spindrift, spring, steel, strawberry, tangerine, teal, tin, tungsten, turquoise
+</p>
+<p class='vspace'>The <em>Plot</em> default colors can be addressed with the numbers 0-15
+</p>
+<p class='vspace'><br clear='all' />
+</p>
+</div>
+
+			</div>
+	</div>
+</div>
+</body></html>

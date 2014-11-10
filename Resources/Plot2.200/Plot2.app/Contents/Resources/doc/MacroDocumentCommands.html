@@ -1,0 +1,167 @@
+<!DOCTYPE 
+  HTML PUBLIC 
+  "-//W3C//DTD HTML 4.01 Transitional//EN" 
+  "http://www.w3.org/TR/html4/loose.dtd">
+
+<html><head>
+<title>Plot2 Documentation : Doc - Macro Document Commands browse</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>  <meta name='robots' content='index,follow' />
+
+<link rel='stylesheet' href='plot2.css' type='text/css' />
+</head>
+
+<body bgcolor="#ffffff">
+
+<div id="main">
+	<div class="content-mat">
+		<div id="content">
+			<div id='sidebar'><div><img src='Plot2Icon.png' alt='' title='' /></div>
+<div class='vspace'></div><h2>Home</h2>
+<p><a class='wikilink' href='Introduction.html'>Introduction</a>
+</p>
+<div class='vspace'></div><h2>References</h2>
+<p><a class='wikilink' href='Toolbar.html'>Toolbar</a><br /><a class='wikilink' href='Expressions.html'>Expressions</a><br /><a class='wikilink' href='TimeFormat.html'>Time Format</a><br /><a class='wikilink' href='Preferences.html'>Preferences</a><br /><a class='wikilink' href='Import.html'>Import</a><br /><a class='wikilink' href='PerlImport.html'>Perl Import Filter</a><br /><a class='wikilink' href='PerlFilter.html'>Perl Data Filter</a><br /><a class='wikilink' href='CommandLine.html'>Command Line</a>
+</p>
+<div class='vspace'></div><h2>Inspectors</h2>
+<p><a class='wikilink' href='DataBufferInspector.html'>Data Buffer</a><br /><a class='wikilink' href='DataInspector.html'>Data</a><br /><a class='wikilink' href='MacroEditor.html'>Macro</a><br /><a class='wikilink' href='MysqlImportEditor.html'>MySQL</a>
+</p>
+<div class='vspace'></div><h2>Macro</h2>
+<p><a class='wikilink' href='MacroLanguage.html'>Macro Language</a><br /><a class='wikilink' href='MacroRangeCommands.html'>Range</a><br /><a class='wikilink' href='MacroBufferCommands.html'>Buffer</a><br /><a class='wikilink' href='MacroControlCommands.html'>Control</a><br /><a class='wikilink' href='MacroInteractiveCommands.html'>Interactive</a><br /><a class='wikilink' href='MacroCalculationCommands.html'>Calculation</a><br /><a class='wikilink' href='MacroStyleCommands.html'>Style</a><br /><a class='wikilink' href='MacroDataStyleCommands.html'>Data Style</a><br /><a class='wikilink' href='MacroAxisStyleCommands.html'>Axis Style</a><br /><a class='wikilink' href='MacroLegendCommands.html'>Legend</a><br /><a class='wikilink' href='MacroTextGraphicCommands.html'>Text &amp; Graphic</a><br /><a class='selflink' href='MacroDocumentCommands.html'>Document</a><br /><a class='wikilink' href='MacroMiscCommands.html'>Miscellaneous</a>
+</p>
+<div class='vspace'></div><h2>Miscellaneous</h2>
+<p><a class='wikilink' href='Contact.html'>Contact</a><br /><a class='wikilink' href='Warranty.html'>Warranty</a>
+</p>
+<div class='vspace'></div>
+</div>
+				<!--PageText-->
+<div id='wikitext'>
+<h1>Macro Language: Document Commands</h1>
+<p><code>new</code>
+</p><div class='indent'>Opens a new document.
+</div><hr />
+<p><code>close</code>
+</p><div class='indent'>Close the current document window.
+</div><hr />
+<p><code>open &lt;filename&gt;</code>
+</p><div class='indent'>Opens the document with the given filename.
+</div><hr />
+<p><code>save</code>
+</p><div class='indent'>Save the current document.
+</div><hr />
+<p><code>saveas &lt;filename&gt;</code>
+</p><div class='indent'>Save document to a new file.
+</div><hr />
+<p><code>savepng &lt;filename&gt; [dpi]</code>
+</p><div class='indent'>Save document as a PNG file. The default resolution is 72 dpi.
+</div><hr />
+<p><code>savejpg &lt;filename&gt; [dpi]</code>
+</p><div class='indent'>Save document as JPG file. The default resolution is 72 dpi.
+</div><hr />
+<p><code>savepdf &lt;filename&gt;</code>
+</p><div class='indent'>Save document as PDF file.
+</div><hr />
+<p><code>saveeps &lt;filename&gt;</code>
+</p><div class='indent'>Save document as EPS file.
+</div><hr />
+<p><code>printdoc</code>
+</p><div class='indent'>Print the current document.
+</div><hr />
+<p><code>import &lt;filename&gt; &lt;mode&gt; [separator] [xcol] [noxcol] [comment] [ignore] [comment sequence] [only number lines] [time format] [comma separator] [period separator]</code>
+</p><div class='indent'>Import an ASCII file
+</div><div class='indent'><code>&lt;mode&gt;</code>: Import mode (0=multicolumn, 1=error values).
+</div><div class='indent'><code>[separator]</code>: Defines the field separator for ASCII import. 
+</div><div class='indent'><code>[xcol]</code>: Defines the X column starting with 1 as the first column. 
+</div><div class='indent'><code>[noxcol]</code>: If true all columns will be interpreted as Y values and the X values will be generated as sequence number. 
+</div><div class='indent'><code>[comment]</code>: Overwrites the default comment for the imported buffers. 
+</div><div class='indent'><code>[ignore]</code>: Lines containing this string will be ignored.
+</div><div class='indent'><code>[comment sequence]</code>: Anything in a line behind this sequence will be ignored for import. 
+</div><div class='indent'><code>[only number lines]</code>: If true import ignores all lines which not begin with a number. 
+</div><div class='indent'><code>[time format]</code>: custom time format for x column import. 
+</div><div class='indent'><code>[comma separator]</code>: If true treat comma as field separator
+</div><div class='indent'><code>[period separator]</code>: If true treat period as field separator. 
+</div><hr />
+<p><code>binaryimport &lt;filename&gt; &lt;type&gt; &lt;mode&gt; &lt;swap&gt; &lt;columns&gt; [comment]</code>
+</p><div class='indent'>Performs a binary import of data.
+</div><div class='indent'><code>&lt;type&gt;</code>: Defines the data type (0=double (64bit), 1=float (32bit), 2=integer (32 bit), 3=integer (16 bit)).
+</div><div class='indent'><code>&lt;mode&gt;</code>: Defines the import mode (0=column mode, 1=block mode).
+</div><div class='indent'><code>&lt;swap&gt;</code>: Enables or disables byte order swapping.
+</div><div class='indent'><code>&lt;columns&gt;</code>: The number of columns to import. 
+</div><hr />
+<p><code>mysqlimport &lt;host&gt; &lt;db&gt; &lt;user&gt; &lt;password&gt; &lt;port&gt; &lt;sql&gt;</code>
+</p><div class='indent'>Import data from MySQL database.
+</div><hr />
+<p><code>perlimport &lt;filename&gt; [name]</code>
+</p><div class='indent'>This executes a <em>Perl</em> import filter for the given file. Look in the <a class='wikilink' href='PerlImport.html'>perl import</a> section for detailed information. 
+</div><div class='indent'>If no <code>name</code> is given the inline <em>Perl</em> block will be used. This is a block in your macro starting with a line containing <code>PERL</code> and ending with a line containing <code>PERL</code>. The default timeout for <em>Perl</em> scripts is 10 seconds. After this time the <em>Perl</em> job will be killed to prevent never come back jobs. You can set the timeout individual with the <code>perltimout &lt;sec&gt;</code> macro command.
+</div><hr />
+<p><code>perlfilter &lt;BUFFER&gt; [name]</code>
+</p><div class='indent'>This executes a <em>Perl</em> filter for the given buffers. Look in the <a class='wikilink' href='PerlFilter.html'>perl filter</a> section for detailed informations.
+</div><div class='indent'>If no <code>name</code> is given the inline <em>Perl</em> block will be used. This is a block in your macro starting with a line containing <code>PERL</code> and ending with a line containing <code>PERL</code>. The default timeout for <em>Perl</em> scripts is 10 seconds. After this time the <em>Perl</em> job will be killed to prevent never come back jobs. You can set the timeout individual with the <code>perltimout &lt;sec&gt;</code> macro command
+</div><hr />
+<p><code>epicsimport &lt;pv1&gt; [pv2]</code>
+</p><div class='indent'>Import EPICS array PV. If one PV is given, it will be imported as Y values with arbitrary X values. If two PV's are given they will be imported as X and Y values.  
+</div><hr />
+<p><code>epictimeout &lt;sec&gt;</code>
+</p><div class='indent'>Set a timeout value for EPICS requests (default is 3 Sec).  
+</div><hr />
+<p><code>epicsmaxarray &lt;bytes&gt;</code>
+</p><div class='indent'>Set EPICS environment variable EPICS_CA_MAX_ARRAY_BYTES (default is 65536).  
+</div><hr />
+<p><code>epicsaddrlist &lt;address list&gt;</code>
+</p><div class='indent'>Set EPICS environment variable EPICS_CA_ADDR_LIST (default is empty).  
+</div><hr />
+<p><code> epicssetvar &lt;var&gt; &lt;pv&gt; </code>
+</p><div class='indent'>Set macro variable from EPICS pv.  
+</div><hr />
+<p><code>export &lt;file&gt; &lt;BUFFER&gt;</code>
+</p><div class='indent'>Export buffers as ASCII file.
+</div><hr />
+<p><code>subview &lt;width&gt; &lt;height&gt; &lt;x&gt; &lt;y&gt;</code>
+</p><div class='indent'>Add a subview to the document.
+</div><hr />
+<p><code>sizeview &lt;width&gt; &lt;height&gt; &lt;x&gt; &lt;y&gt;</code>
+</p><div class='indent'>Change the size and position of the current subview
+</div><hr />
+<p><code>changeview &lt;subview number&gt;</code>
+</p><div class='indent'>Change the current view where 0 ist the main view.
+</div><hr />
+<p><code>deleteview &lt;subview number | all&gt;</code>
+</p><div class='indent'>Delete one or all subviews
+</div><p class='vspace'><br clear='all' />
+</p>
+</div>
+
+			</div>
+	</div>
+</div>
+</body></html>

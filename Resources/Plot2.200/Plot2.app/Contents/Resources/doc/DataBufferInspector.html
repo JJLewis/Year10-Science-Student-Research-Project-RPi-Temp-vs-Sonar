@@ -1,0 +1,128 @@
+<!DOCTYPE 
+  HTML PUBLIC 
+  "-//W3C//DTD HTML 4.01 Transitional//EN" 
+  "http://www.w3.org/TR/html4/loose.dtd">
+
+<html><head>
+<title>Plot2 Documentation : Doc - Data Buffer Inspector browse</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>  <meta name='robots' content='index,follow' />
+
+<link rel='stylesheet' href='plot2.css' type='text/css' />
+</head>
+
+<body bgcolor="#ffffff">
+
+<div id="main">
+	<div class="content-mat">
+		<div id="content">
+			<div id='sidebar'><div><img src='Plot2Icon.png' alt='' title='' /></div>
+<div class='vspace'></div><h2>Home</h2>
+<p><a class='wikilink' href='Introduction.html'>Introduction</a>
+</p>
+<div class='vspace'></div><h2>References</h2>
+<p><a class='wikilink' href='Toolbar.html'>Toolbar</a><br /><a class='wikilink' href='Expressions.html'>Expressions</a><br /><a class='wikilink' href='TimeFormat.html'>Time Format</a><br /><a class='wikilink' href='Preferences.html'>Preferences</a><br /><a class='wikilink' href='Import.html'>Import</a><br /><a class='wikilink' href='PerlImport.html'>Perl Import Filter</a><br /><a class='wikilink' href='PerlFilter.html'>Perl Data Filter</a><br /><a class='wikilink' href='CommandLine.html'>Command Line</a>
+</p>
+<div class='vspace'></div><h2>Inspectors</h2>
+<p><a class='selflink' href='DataBufferInspector.html'>Data Buffer</a><br /><a class='wikilink' href='DataInspector.html'>Data</a><br /><a class='wikilink' href='MacroEditor.html'>Macro</a><br /><a class='wikilink' href='MysqlImportEditor.html'>MySQL</a>
+</p>
+<div class='vspace'></div><h2>Macro</h2>
+<p><a class='wikilink' href='MacroLanguage.html'>Macro Language</a><br /><a class='wikilink' href='MacroRangeCommands.html'>Range</a><br /><a class='wikilink' href='MacroBufferCommands.html'>Buffer</a><br /><a class='wikilink' href='MacroControlCommands.html'>Control</a><br /><a class='wikilink' href='MacroInteractiveCommands.html'>Interactive</a><br /><a class='wikilink' href='MacroCalculationCommands.html'>Calculation</a><br /><a class='wikilink' href='MacroStyleCommands.html'>Style</a><br /><a class='wikilink' href='MacroDataStyleCommands.html'>Data Style</a><br /><a class='wikilink' href='MacroAxisStyleCommands.html'>Axis Style</a><br /><a class='wikilink' href='MacroLegendCommands.html'>Legend</a><br /><a class='wikilink' href='MacroTextGraphicCommands.html'>Text &amp; Graphic</a><br /><a class='wikilink' href='MacroDocumentCommands.html'>Document</a><br /><a class='wikilink' href='MacroMiscCommands.html'>Miscellaneous</a>
+</p>
+<div class='vspace'></div><h2>Miscellaneous</h2>
+<p><a class='wikilink' href='Contact.html'>Contact</a><br /><a class='wikilink' href='Warranty.html'>Warranty</a>
+</p>
+<div class='vspace'></div>
+</div>
+				<!--PageText-->
+<div id='wikitext'>
+<h1><img width='24' src='data.png' alt='' title='' /> Data Buffer Inspector</h1>
+<p class='vspace'>The <em>Data Buffer Inspector</em> controls the data buffer in your document. Each line represents a set of XY data.
+It is possible to select some buffers and transfer them via copy and paste to another <em>Plot</em> document.
+</p>
+<div class='vspace'></div><div><img width='583' src='databufferinspector.png' alt='' title='' /></div>
+<p class='vspace'>The columns in the <em>Data Buffer Inspector</em> show all important data about the buffer and allow some changes:
+</p>
+<p class='vspace'><strong>1. column</strong>: In this column appears an arrow which indicates the <em>working buffer</em>, e.g. if you select the <em>Data Style Inspector</em> it show the attributes of the buffer with the arrow in front. Changing the working buffer is done by double clicking in this column.
+</p>
+<p class='vspace'><strong>No column</strong>: The number of the buffer. The buffer number can be useful for <a class='wikilink' href='MacroLanguage.html'>macro programming</a>.
+</p>
+<p class='vspace'><strong>X column</strong>: Shows if the buffer belongs to the first (left) X axis or to the second (right) X axis of the plot. Can be changed by double clicking the column. If this column shows a &#8734; the buffer does not depend to an axis. 
+</p>
+<p class='vspace'><strong>Y column</strong>: Shows if the buffer belongs to the first (bottom) Y axis or to the second (top) Y axis of the plot. Can be changed by double clicking the column. If this column shows a &#8734; the buffer does not depend to an axis. 
+</p>
+<p class='vspace'><strong>E column</strong>: This column indicates that the buffer contains error values. 
+</p>
+<p class='vspace'><strong>Points column</strong>: Number of data points in the buffer.
+</p>
+<p class='vspace'><strong>Source column</strong>: The source of the data. This column is editable.  
+</p>
+<p class='vspace'><strong>L column</strong>: If checked the buffers comment will be shown in the automatically generated legend. You can change the state by double clicking the column.
+</p>
+<p class='vspace'><strong>Comment column</strong>: As the name says. This column is editable.
+</p>
+<p class='vspace'>At the top of this inspector appears a gallery of buttons:
+</p>
+<p class='vspace'><strong>Up</strong>, <strong>Down</strong>: with this buttons you can move the current working buffer up and down. The order in the <em>Data inspector</em> is also the order in which the buffer will be plotted and changing the order may also change the appearance of your document.
+</p>
+<p class='vspace'><strong>Hide</strong> and <strong>Show</strong> hides or shows all selected buffers. Hidden buffers will not displayed but the data are still available for later use. The hide/show state of a buffer can also be changed by double clicking the <em>Points</em> or <em>No</em> column. 
+</p>
+<p class='vspace'><strong>Delete</strong>: delete all selected buffers.
+</p>
+<p class='vspace'><strong>Duplicate</strong>: duplicate all selected buffers.
+</p>
+<p class='vspace'><strong>Downscal.</strong> and <strong>Upscale</strong>: Increase or lowers the range of the plot.
+</p>
+<p class='vspace'><strong>Rescale</strong>: Rescales the plot so that every data point is just visible.
+</p>
+<p class='vspace'>The <strong>1.Axis, 2.Axis, both</strong>: switch defines if operations like rescale take effect on both axis or only on one of them.
+</p>
+<p class='vspace'><strong>Rem. Err.</strong>: This function removes error values from all selected buffer. For large buffers this can reduce the file size.
+</p>
+<p class='vspace'><strong>Sel. None</strong>: Unselect all buffers.
+</p>
+<p class='vspace'><strong>Invert Sel.</strong>: Inverts the buffer selection
+</p>
+<p class='vspace'><strong>Show Sel.</strong>: Shows only selected buffers
+</p>
+<p class='vspace'><strong>Hide Sel.</strong>: Hide only selected buffers.
+</p>
+<p class='vspace'><strong>Select All</strong>: Select all buffers.
+</p>
+<p class='vspace'><br clear='all' />
+</p>
+</div>
+
+			</div>
+	</div>
+</div>
+</body></html>
